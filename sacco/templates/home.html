@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+KOBA 2009
+{% endblock %}
+{% block content %}
+
+    {% if current_user.is_authenticated %}
+
+        <div class="title">
+            <h2>Hi {{ current_user.fname }}, Welcome to your KOBA Portal </h2>
+        </div>
+
+    {% else %}
+
+        <div class="title">
+            <h2>Welcome to Kagumo Old Boys Assosiation</h2>
+        </div>
+
+        <div class="button">
+            <a href="{{ url_for('register_page') }}" class="btn">Register</a>
+            <a href="{{ url_for('login_page') }}" class="btn">Login</a>
+        </div>
+
+    {% endif %}
+
+
+{% endblock %}

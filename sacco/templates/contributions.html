@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Market Page
+{% endblock %}
+
+{% block content %}
+
+  <div class="row" style="margin-top:20px; margin-left:20px">
+    <div class="col-8">
+      <h2>My Contributions</h2>
+      <p>Click on entry for more info</p>
+      <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+          <!-- Your Columns HERE -->
+          <th scope="col">Transaction ID</th>
+          <th scope="col">Transaction Date</th>
+          <th scope="col">Transaction Type</th>
+          <th scope="col">Amount</th>
+          <th scope="col">MPESA Code</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Your rows inside the table HERE: -->
+        {% for contribution in contributions %}
+        <tr>
+          <td>{{ contribution.transaction_id }}</td>
+          <td>{{ contribution.transaction_date }}</td>
+          <td>{{ contribution.transaction_type }}</td>
+          <td>{{ contribution.amount }}</td>
+          <td>{{ contribution.mpesa_code }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h2>Submit Contribution</h2>
+      <p>Click to submit contribution</p>
+      <br>
+    </div>
+  </div>
+
+
+{% endblock %}
+
+
+
+

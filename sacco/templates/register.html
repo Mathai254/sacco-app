@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register Page
+{% endblock %}
+
+{% block content %}
+
+<div class="center">
+  <h1>Register</h1>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="txt_field">
+      {{ form.fname }}
+      <span></span>
+      {{ form.fname.label }}
+    </div>
+
+    <div class="txt_field">
+      {{ form.lname }}
+      <span></span>
+      {{ form.lname.label }}
+    </div>
+
+    <div class="txt_field">
+      {{ form.email_address }}
+      <span></span>
+      {{ form.email_address.label }}
+    </div>
+
+    <div class="txt_field">
+      {{ form.password1 }}
+      <span></span>
+      {{ form.password1.label }}
+    </div>
+
+
+    <div class="txt_field">
+      {{ form.password2 }}
+      <span></span>
+      {{ form.password2.label }}
+    </div>
+
+    {{ form.submit() }}
+    <div class="signup_link">
+      Already a member? <a href="{{ url_for('login_page') }}">Login</a>
+    </div>
+  </form>
+
+
+</div>
+
+{% endblock %}
